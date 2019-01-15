@@ -13,13 +13,13 @@
 </head>
 <body>
 <div id="welcome">
-    <h1 class="animated jello delay-0s">欢迎光临</h1>
-    <button onclick="toggleWelcome()">直接跳转</button>
+    <img src="img/page1-bg.jpg" class="bg" alt="" width="100%">
+    <button id="game-start" class="go-btn" onclick="toggleWelcome()"></button>
 </div>
 <div class="container">
-
+    <img src="img/page2-bg.jpg" class="bg" alt="" width="100%">
     <div class="game-top">
-        <p><input type="button" value="开始游戏" id="game-start"><p>
+        <!--<p><button class="go-btn"></button><p>-->
         <p>得分：<span id="game-score">0</span></p>
         <p>剩余时间：<span id="game-time">60</span> s</p>
     </div>

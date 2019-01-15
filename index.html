@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta charset="UTF-8">
+    <title>打地鼠</title>
+    <link rel="stylesheet" type="text/css" href="hit-mouse.css">
+    <link rel="stylesheet" href="https://www.hnsjb.cn/show/static/animate.css">
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="./js/share.js"></script>
+</head>
+<body>
+<div id="welcome">
+    <h1 class="animated jello delay-0s">欢迎光临</h1>
+    <button onclick="toggleWelcome()">直接跳转</button>
+</div>
+<div class="container">
+
+    <div class="game-top">
+        <p><input type="button" value="开始游戏" id="game-start"><p>
+        <p>得分：<span id="game-score">0</span></p>
+        <p>剩余时间：<span id="game-time">60</span> s</p>
+    </div>
+    <div class="game-content">
+        <ul>
+            <li>
+                <div></div>
+            </li>
+            <li>
+                <div></div>
+            </li>
+            <li>
+                <div></div>
+            </li>
+            <li>
+                <div></div>
+            </li>
+            <li>
+                <div></div>
+            </li>
+            <li>
+                <div></div>
+            </li>
+            <li>
+                <div></div>
+            </li>
+            <li>
+                <div></div>
+            </li>
+            <li>
+                <div></div>
+            </li>
+        </ul>
+    </div>
+    <div id="textContainer">
+        <h3 id="textTitle"></h3>
+        <p id="text"></p>
+        <img id="textImg" src="" alt="">
+        <button onclick="hideText()">继续</button>
+    </div>
+</div>
+<script src="js/welcome.js"></script>
+<script type="text/javascript" src="js/hit-mouse.js"></script>
+</body>
+</html>
+

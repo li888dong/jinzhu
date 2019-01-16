@@ -80,9 +80,9 @@ MouseGame.prototype = {
         var that = this;        
 
         // 监听游戏开始/重新开始
-        that.gameStart[0].addEventListener('click', function() {
-            that.startGame();
-        }, false);
+        // that.gameStart[0].addEventListener('click', function() {
+        //     that.startGame();
+        // }, false);
 
         // 打地鼠操作
         that.mousesWrap[0].addEventListener('click', function(e) {
@@ -97,12 +97,21 @@ MouseGame.prototype = {
             // 扣分
             if (elem.className.indexOf('bad') !== -1) {
                 that.score -= that.badScore;
+                document.getElementById('media').src = './mp3/failed.mp3';
+                setTimeout(function () {
+                    document.getElementById('media').src = './mp3/music.mp3';
+                },800)
             }
 
             // 加分
             else {
-                showText();
+                document.getElementById('media').src = './mp3/success.mp3';
+                setTimeout(function () {
+                    showText();
+                    document.getElementById('media').src = './mp3/music.mp3';
+                },800);
                 that.score += that.goodScore;
+                that.totalTime = that.totalTime + 1;
                 // alert('游戏结束，得分为：' + that.score);
                 for (var i = 0, j = that.mouses.length; i < j; ++i) {
                     that.mouses[i].style.display = 'none';
@@ -146,8 +155,8 @@ MouseGame.prototype = {
 
     // 开始游戏
     startGame: function() {
-        document.getElementById('game-start').style.opacity = '0';
-
+        document.getElementsByClassName('go-btn')[0].style.opacity = '0';
+        document.getElementById('media').src = './mp3/music.mp3';
         this.score = 0;
         this.totalTime = 60;
         this.text(this.gameTime[0], this.totalTime);

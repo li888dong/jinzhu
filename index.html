@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
     <meta charset="UTF-8">
-    <title>打地鼠</title>
+    <title>抱金猪h5</title>
     <link rel="stylesheet" type="text/css" href="hit-mouse.css">
     <link rel="stylesheet" href="https://www.hnsjb.cn/show/static/animate.css">
     <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
@@ -15,10 +15,11 @@
 <audio id="media" src="" autoplay loop></audio>
 <div id="welcome">
     <img src="img/page1-bg.jpg" class="bg" alt="" width="100%" height="100%">
+    <img src="img/page1-pig.png" class="page1-pig animated infinite rubberBand slow delay-0s" alt="">
     <button class="go-btn" onclick="toggleWelcome()"></button>
 </div>
 <div class="container">
-    <img src="img/page2-bg.jpg" class="bg" alt="" width="100%" height="100%">
+    <!--<img src="img/page2-bg.jpg" class="bg" alt="" width="100%" height="100%">-->
     <div class="game-top">
         <!--<p><button class="go-btn"></button><p>-->
         <p>得分：<span id="game-score">0</span></p>
@@ -27,39 +28,42 @@
     <div class="game-content">
         <ul>
             <li>
-                <div></div>
+                <div><img src="./img/good-pig.png" alt="" width="100%" height="100%"></div>
             </li>
             <li>
-                <div></div>
+                <div><img src="./img/good-pig.png" alt="" width="100%" height="100%"></div>
             </li>
             <li>
-                <div></div>
+                <div><img src="./img/good-pig.png" alt="" width="100%" height="100%"></div>
             </li>
             <li>
-                <div></div>
+                <div><img src="./img/good-pig.png" alt="" width="100%" height="100%"></div>
             </li>
             <li>
-                <div></div>
+                <div><img src="./img/good-pig.png" alt="" width="100%" height="100%"></div>
             </li>
             <li>
-                <div></div>
+                <div><img src="./img/good-pig.png" alt="" width="100%" height="100%"></div>
             </li>
             <li>
-                <div></div>
+                <div><img src="./img/good-pig.png" alt="" width="100%" height="100%"></div>
             </li>
             <li>
-                <div></div>
+                <div><img src="./img/good-pig.png" alt="" width="100%" height="100%"></div>
             </li>
             <li>
-                <div></div>
+                <div><img src="./img/good-pig.png" alt="" width="100%" height="100%"></div>
             </li>
         </ul>
     </div>
     <div id="textContainer">
-        <h3 id="textTitle"></h3>
-        <p id="text"></p>
-        <img id="textImg" src="" alt="">
-        <button onclick="hideText()">继续</button>
+        <div class="text-bg"></div>
+        <div class="text-content">
+            <h3 id="textTitle"></h3>
+            <p id="text"></p>
+            <img id="textImg" src="" alt="">
+            <button onclick="hideText()">继续</button>
+        </div>
     </div>
 </div>
 <script src="js/welcome.js"></script>

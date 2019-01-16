@@ -59,12 +59,14 @@ MouseGame.prototype = {
                 that.mouses[i].setAttribute('clicked', '0');
                 that.mouses[i].className = 'good active';
                 that.mouses[i].style.display = 'none';
+                that.mouses[i].firstChild.src = './img/good-pig.png'
             }            
 
             // bad 的个数
             var badNum = that.getRandom(5, 8);
             for (var i = 0; i < badNum; i++) {
                 that.mouses[that.getRandom(0, 8)].className = 'bad active';
+                that.mouses[that.getRandom(0, 8)].firstChild.src = './img/bad-pig.png'
             }            
 
             // 要显示的个数
@@ -87,15 +89,14 @@ MouseGame.prototype = {
         // 打地鼠操作
         that.mousesWrap[0].addEventListener('click', function(e) {
             e = e || window.event;
-            var elem = e.target || e.srcElement;
-
+            var elem = e.target.parentElement || e.srcElement.parentElement;
             // 如果当前项被隐藏则不操作，多次点击只取第一次分数
             if (elem.style.display !== 'block' || elem.getAttribute('clicked') === '1') {
                 return;
             }
 
             // 扣分
-            if (elem.className.indexOf('bad') !== -1) {
+            if (elem.firstChild.src.indexOf('bad')>-1) {
                 that.score -= that.badScore;
                 document.getElementById('media').src = './mp3/failed.mp3';
                 setTimeout(function () {
@@ -106,10 +107,10 @@ MouseGame.prototype = {
             // 加分
             else {
                 document.getElementById('media').src = './mp3/success.mp3';
+                showText();
                 setTimeout(function () {
-                    showText();
                     document.getElementById('media').src = './mp3/music.mp3';
-                },800);
+                },1000);
                 that.score += that.goodScore;
                 that.totalTime = that.totalTime + 1;
                 // alert('游戏结束，得分为：' + that.score);
@@ -191,63 +192,53 @@ function showText(){
 // 文本信息
 var article = [
     {
-        title:'标题1',
-        text:'111111111111111111',
+        title:'礼包一：',
+        text:'新增城镇就业110万人。',
         imgUrl:'asdadas'
     },
     {
-        title:'标题2',
-        text:'22222222222222222',
+        title:'礼包二：',
+        text:'参加城乡居民基本医保的80岁以上高龄老人住院报销比例在现行政策基础上提高5个百分点，实施80岁以上老人高龄津贴制度。',
         imgUrl:'asdadas'
     },
     {
-        title:'标题3',
-        text:'33333333333333333',
+        title:'礼包三：\n',
+        text:'继续免费开展妇女宫颈癌和乳腺癌筛查、预防出生缺陷产前筛查和新生儿疾病筛查。\n',
         imgUrl:'asdadas'
     },
     {
-        title:'标题4',
-        text:'33333333333333333',
+        title:'礼包四：\n',
+        text:'实施残疾儿童康复救助。\n',
         imgUrl:'asdadas'
     },
     {
-        title:'标题5',
-        text:'33333333333333333',
+        title:'礼包五：\n',
+        text:'开展农村人居环境“千村示范、万村整治”工程，完成300万户农村户用卫生厕所改造，完成剩余45个县(市、区)农村垃圾治理省级达标验收任务。\n',
         imgUrl:'asdadas'
     },
     {
-        title:'标题6',
-        text:'33333333333333333',
+        title:'礼包六：\n',
+        text:'持续改善大气环境质量，全省空气优良天数比例达到59.5%。\n',
         imgUrl:'asdadas'
     },
     {
-        title:'标题7',
-        text:'33333333333333333',
+        title:'礼包七：\n',
+        text:'实施“百县通村入组工程”，新改建农村公路5000公里以上；开展“万村通客车提质工程”，所有具备条件的行政村通客车率达到100%。\n',
         imgUrl:'asdadas'
     },
     {
-        title:'标题8',
-        text:'33333333333333333',
+        title:'礼包八：\n',
+        text:'新建和改扩建城乡幼儿园1000所，新增学位10万个。\n',
         imgUrl:'asdadas'
     },
     {
-        title:'标题9',
-        text:'33333333333333333',
+        title:'礼包九：\n',
+        text:'完成3000个电网薄弱行政村电网改造。\n',
         imgUrl:'asdadas'
     },
     {
-        title:'标题10',
-        text:'33333333333333333',
-        imgUrl:'asdadas'
-    },
-    {
-        title:'标题11',
-        text:'33333333333333333',
-        imgUrl:'asdadas'
-    },
-    {
-        title:'标题12',
-        text:'33333333333333333',
+        title:'礼包十：\n',
+        text:'加快县(市)人民医院提质升级。\n',
         imgUrl:'asdadas'
     }
 ];

@@ -4,11 +4,7 @@ var toggleWelcomTimer = setTimeout(toggleWelcome,10000);
 
 function toggleWelcome() {
     clearTimeout(toggleWelcomTimer);
-    document.getElementById('media').src = './mp3/go.mp3';
-    setTimeout(function () {
-        game.startGame();
-
-    },2500);
+    // document.getElementById('media').src = './mp3/go.mp3';
     welcomeEle.style.opacity = 0;
     welcomeEle.zIndex = -1;
     containerEle.style.opacity = 1;

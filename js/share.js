@@ -25,7 +25,7 @@
                     title: document.title, // 分享标题
                     link: document.location.href, // 分享链接，该链接域名必须与当前企业的可信域名一致
                     imgUrl: 'https://www.hnsjb.cn/static/img/wxshare-icon.jpg', // 分享图标
-                    desc: '卫生与健康-新界 | 河南手机报'
+                    desc: '@河南人，快来领取你的福利大礼包！'
                 };
                 wx.onMenuShareAppMessage(shareData);
                 wx.onMenuShareTimeline(shareData);
